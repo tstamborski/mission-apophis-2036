@@ -1,2 +1,2 @@
-# mission-apophis-2036
-A not-trivial clone of asteroids made in Godot 4.0
+# Mission: Apophis 2036
+A not-trivial clone of asteroids game made in Godot.
