@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd0f07xfki5cu"]
+
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="1_eu5xk"]
+[ext_resource type="Script" path="res://scripts/exit_menu_screen.gd" id="1_qsewh"]
+[ext_resource type="PackedScene" uid="uid://poxr4qr5mqkg" path="res://scenes/menu_item.tscn" id="2_kgkop"]
+
+[node name="ExitMenuScreen" type="Node2D"]
+script = ExtResource("1_qsewh")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 16.0
+text = "> Are you sure?"
+label_settings = ExtResource("1_eu5xk")
+clip_text = true
+
+[node name="YesItem" parent="." instance=ExtResource("2_kgkop")]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 48.0
+offset_bottom = 40.0
+text = "Yes"
+
+[node name="NoItem" parent="." instance=ExtResource("2_kgkop")]
+offset_left = 104.0
+offset_top = 32.0
+offset_bottom = 40.0
+text = "No"
+order_number = 1

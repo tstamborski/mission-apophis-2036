@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://chrd1v5ewoijt"]
+
+[ext_resource type="PackedScene" uid="uid://dd6fkt8v4k6ae" path="res://scenes/background.tscn" id="1_dor77"]
+[ext_resource type="Script" path="res://scripts/main_menu_scene.gd" id="1_vmir3"]
+[ext_resource type="PackedScene" uid="uid://dfmnv47nyqaj4" path="res://scenes/main_menu_computer.tscn" id="2_vo8n3"]
+[ext_resource type="Texture2D" uid="uid://cweo2257dr0tj" path="res://assets/nazalogo32.png" id="3_83heu"]
+[ext_resource type="LabelSettings" uid="uid://bqg5g6g26a0oc" path="res://resources/gamename_label_settings.tres" id="4_vqgst"]
+[ext_resource type="AudioStream" uid="uid://cynhg7wj6u5ge" path="res://assets/asteroid-menu.mp3" id="6_2hxkd"]
+
+[node name="MainMenuScene" type="Node2D"]
+script = ExtResource("1_vmir3")
+metadata/_edit_group_ = true
+
+[node name="Background" parent="." instance=ExtResource("1_dor77")]
+
+[node name="MainMenuComputer" parent="." instance=ExtResource("2_vo8n3")]
+offset_left = 80.0
+offset_top = 96.0
+offset_right = 240.0
+offset_bottom = 184.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 72.0
+texture = ExtResource("3_83heu")
+
+[node name="GameNameLabel" type="Label" parent="."]
+clip_contents = true
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 272.0
+offset_bottom = 66.0
+text = "Mission: Apophis 2036"
+label_settings = ExtResource("4_vqgst")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2hxkd")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

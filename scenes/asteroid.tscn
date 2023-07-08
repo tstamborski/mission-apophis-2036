@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbw27qkhbomke"]
+
+[ext_resource type="Script" path="res://scripts/asteroid.gd" id="1_31oac"]
+
+[node name="Asteroid" type="CharacterBody2D" groups=["Asteroid"]]
+collision_mask = 11
+script = ExtResource("1_31oac")
+points = null

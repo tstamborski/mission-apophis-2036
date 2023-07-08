@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbjh4khqb8w3q"]
+
+[ext_resource type="PackedScene" uid="uid://dynxkxj4olbyq" path="res://scenes/hiscore_display.tscn" id="1_2wld7"]
+[ext_resource type="PackedScene" uid="uid://dd6fkt8v4k6ae" path="res://scenes/background.tscn" id="1_ed53j"]
+[ext_resource type="Script" path="res://scripts/hiscore_scene.gd" id="1_gh6wq"]
+[ext_resource type="LabelSettings" uid="uid://bqg5g6g26a0oc" path="res://resources/gamename_label_settings.tres" id="2_xhibo"]
+[ext_resource type="PackedScene" uid="uid://4t2f4kg0r2h7" path="res://scenes/medal_display.tscn" id="4_s6dpk"]
+[ext_resource type="AudioStream" uid="uid://cl8vwa1dt5ic1" path="res://assets/asteroid-hiscore.mp3" id="6_wpoce"]
+
+[node name="HiscoreScene" type="Node2D"]
+script = ExtResource("1_gh6wq")
+metadata/_edit_group_ = true
+
+[node name="Background" parent="." instance=ExtResource("1_ed53j")]
+
+[node name="HiscoreDisplay" parent="." instance=ExtResource("1_2wld7")]
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 312.0
+offset_bottom = 192.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 312.0
+offset_bottom = 34.0
+text = "These are our best astronauts!"
+label_settings = ExtResource("2_xhibo")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="MedalDisplay" parent="." instance=ExtResource("4_s6dpk")]
+position = Vector2(88, 40)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wpoce")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

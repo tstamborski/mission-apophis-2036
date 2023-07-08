@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4sl03xcvrdn5"]
+
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="1_5nmf0"]
+[ext_resource type="Script" path="res://scripts/mission_menu_screen.gd" id="1_i0rjc"]
+[ext_resource type="PackedScene" uid="uid://poxr4qr5mqkg" path="res://scenes/menu_item.tscn" id="2_n0jtc"]
+
+[node name="MissionMenuScreen" type="Node2D"]
+script = ExtResource("1_i0rjc")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+clip_contents = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 16.0
+size_flags_vertical = 0
+text = "__MISSION_MENU__"
+label_settings = ExtResource("1_5nmf0")
+
+[node name="NewMissionItem" parent="." instance=ExtResource("2_n0jtc")]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 136.0
+offset_bottom = 32.0
+text = " * New Mission"
+
+[node name="HighScoresItem" parent="." instance=ExtResource("2_n0jtc")]
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 136.0
+offset_bottom = 48.0
+text = " * High Scores"
+order_number = 1
+
+[node name="ExitItem" parent="." instance=ExtResource("2_n0jtc")]
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 136.0
+offset_bottom = 64.0
+text = " * Exit"
+order_number = 2

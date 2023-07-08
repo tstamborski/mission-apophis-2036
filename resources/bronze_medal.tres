@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cyrklgnuxf14u"]
+
+[ext_resource type="Texture2D" uid="uid://yksbrnoeuejg" path="res://assets/bronzemedal8.png" id="1_ecs88"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akcai"]
+atlas = ExtResource("1_ecs88")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddp6k"]
+atlas = ExtResource("1_ecs88")
+region = Rect2(8, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akcai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddp6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

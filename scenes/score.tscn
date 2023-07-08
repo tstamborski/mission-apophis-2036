@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt68utstn8ylh"]
+
+[ext_resource type="Script" path="res://scripts/score_manager.gd" id="1_imccv"]
+[ext_resource type="AudioStream" uid="uid://fwmuy1n3g54c" path="res://assets/asteroid_lost.mp3" id="2_cv3c7"]
+[ext_resource type="AudioStream" uid="uid://djpmvyyfjb4dp" path="res://assets/asteroid_gain.mp3" id="3_mn2ta"]
+[ext_resource type="AudioStream" uid="uid://c5wspxclf6210" path="res://assets/asteroid_bonus.mp3" id="4_wxah5"]
+[ext_resource type="AudioStream" uid="uid://u12i8buv2g24" path="res://assets/asteroid-nextlevel.mp3" id="5_8hj8a"]
+
+[node name="Score" type="Node" groups=["Score"]]
+script = ExtResource("1_imccv")
+
+[node name="NextLevelTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="RepeatLevelTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="LostLiveStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cv3c7")
+
+[node name="GainLiveStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mn2ta")
+
+[node name="ComboBonusStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wxah5")
+
+[node name="NextLevelStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8hj8a")
+
+[connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]
+[connection signal="timeout" from="RepeatLevelTimer" to="." method="_on_repeat_level_timer_timeout"]

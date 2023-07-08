@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bciwpyuudcrr6"]
+
+[ext_resource type="Texture2D" uid="uid://b8dadfjr01yc1" path="res://assets/rock12.png" id="1_i4rjx"]
+[ext_resource type="Script" path="res://scripts/asteroid_12.gd" id="1_p1vj1"]
+[ext_resource type="PackedScene" path="res://scenes/blow.tscn" id="2_brdaw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qlut"]
+radius = 8.06226
+
+[node name="Asteroid12" type="CharacterBody2D" groups=["Asteroid", "MediumAsteroid"]]
+collision_mask = 11
+script = ExtResource("1_p1vj1")
+points = 10
+blow_scene = ExtResource("2_brdaw")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i4rjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7qlut")

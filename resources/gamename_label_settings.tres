@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bqg5g6g26a0oc"]
+
+[sub_resource type="SystemFont" id="SystemFont_cx4aj"]
+
+[resource]
+font = SubResource("SystemFont_cx4aj")
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+shadow_color = Color(0, 0.176471, 1, 1)

@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba3o7qneitojv"]
+
+[ext_resource type="Texture2D" uid="uid://cdp08ewfwcvtu" path="res://assets/pausemenu120x104.png" id="1_c7q76"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_y3xe2"]
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="2_t650v"]
+[ext_resource type="PackedScene" uid="uid://poxr4qr5mqkg" path="res://scenes/menu_item.tscn" id="3_vagpt"]
+[ext_resource type="AudioStream" uid="uid://c3yxqxserfoey" path="res://assets/asteroids_switch.mp3" id="5_mvrue"]
+
+[node name="PauseMenu" type="Panel"]
+process_mode = 2
+script = ExtResource("1_y3xe2")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 104.0
+texture = ExtResource("1_c7q76")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 24.0
+text = "___PAUSE___"
+label_settings = ExtResource("2_t650v")
+clip_text = true
+
+[node name="ResumeMenuItem" parent="." instance=ExtResource("3_vagpt")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 104.0
+offset_bottom = 40.0
+text = "Resume"
+
+[node name="RestartMenuItem" parent="." instance=ExtResource("3_vagpt")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 104.0
+offset_bottom = 58.0
+text = "Restart"
+order_number = 1
+
+[node name="MainMenuMenuItem" parent="." instance=ExtResource("3_vagpt")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 104.0
+offset_bottom = 72.0
+text = "Main Menu"
+order_number = 2
+
+[node name="ExitMenuItem" parent="." instance=ExtResource("3_vagpt")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 90.0
+text = "Exit"
+order_number = 3
+
+[node name="SwitchStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mvrue")
+
+[connection signal="clicked" from="ResumeMenuItem" to="." method="choose"]
+[connection signal="selection" from="ResumeMenuItem" to="." method="select"]
+[connection signal="clicked" from="RestartMenuItem" to="." method="choose"]
+[connection signal="selection" from="RestartMenuItem" to="." method="select"]
+[connection signal="clicked" from="MainMenuMenuItem" to="." method="choose"]
+[connection signal="selection" from="MainMenuMenuItem" to="." method="select"]
+[connection signal="clicked" from="ExitMenuItem" to="." method="choose"]
+[connection signal="selection" from="ExitMenuItem" to="." method="select"]

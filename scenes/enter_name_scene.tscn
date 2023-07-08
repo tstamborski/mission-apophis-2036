@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://cirejcolfkpd8"]
+
+[ext_resource type="Script" path="res://scripts/enter_name_scene.gd" id="1_3iug5"]
+[ext_resource type="LabelSettings" uid="uid://bqg5g6g26a0oc" path="res://resources/gamename_label_settings.tres" id="1_asbcb"]
+[ext_resource type="Texture2D" uid="uid://bjoejmuasmyix" path="res://assets/mainmenu160x88.png" id="1_n8qwj"]
+[ext_resource type="PackedScene" uid="uid://bbm7x2qlxmjeo" path="res://scenes/red_firework.tscn" id="1_tljth"]
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="2_4ib6h"]
+[ext_resource type="PackedScene" uid="uid://dd6fkt8v4k6ae" path="res://scenes/background.tscn" id="2_ony4x"]
+[ext_resource type="PackedScene" uid="uid://bn2g6guyxhmdy" path="res://scenes/green_firework.tscn" id="2_wv5sx"]
+[ext_resource type="PackedScene" uid="uid://dq6gc2qmlh6b2" path="res://scenes/blue_firework.tscn" id="3_nq7j8"]
+[ext_resource type="Theme" uid="uid://buw6s5m0h5joo" path="res://resources/green_theme.tres" id="4_h0hom"]
+[ext_resource type="AudioStream" uid="uid://cl8vwa1dt5ic1" path="res://assets/asteroid-hiscore.mp3" id="10_d6lbl"]
+
+[node name="EnterNameScene" type="Node2D"]
+script = ExtResource("1_3iug5")
+
+[node name="Background" parent="." instance=ExtResource("2_ony4x")]
+
+[node name="BlueFirework" parent="." instance=ExtResource("3_nq7j8")]
+position = Vector2(168, 16)
+
+[node name="BlueFirework2" parent="." instance=ExtResource("3_nq7j8")]
+position = Vector2(64, 64)
+
+[node name="RedFirework" parent="." instance=ExtResource("1_tljth")]
+position = Vector2(256, 88)
+
+[node name="GreenFirework" parent="." instance=ExtResource("2_wv5sx")]
+position = Vector2(40, 128)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 272.0
+offset_bottom = 50.0
+text = "You have made a high score!"
+label_settings = ExtResource("1_asbcb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 240.0
+offset_bottom = 168.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 88.0
+texture = ExtResource("1_n8qwj")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 144.0
+offset_bottom = 40.0
+text = "Enter your name:"
+label_settings = ExtResource("2_4ib6h")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 24.0
+offset_bottom = 56.0
+text = ">"
+label_settings = ExtResource("2_4ib6h")
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 144.0
+offset_bottom = 56.0
+theme = ExtResource("4_h0hom")
+max_length = 12
+context_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+caret_blink = true
+caret_blink_interval = 0.2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_d6lbl")
+autoplay = true
+
+[connection signal="text_submitted" from="Panel/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

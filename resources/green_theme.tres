@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://buw6s5m0h5joo"]
+
+[ext_resource type="FontFile" uid="uid://m8snhb6n6hr5" path="res://assets/font.png" id="1_1018i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcjqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0w0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3b3k2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3kpt"]
+
+[resource]
+default_font = ExtResource("1_1018i")
+default_font_size = 8
+Fonts/styles/focus = SubResource("StyleBoxFlat_mcjqx")
+LineEdit/colors/caret_color = Color(0, 1, 0, 1)
+LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0, 1, 0, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_selected_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0, 0.498039, 0, 1)
+LineEdit/colors/selection_color = Color(0, 1, 0, 1)
+LineEdit/constants/caret_width = 6
+LineEdit/constants/minimum_character_width = 8
+LineEdit/font_sizes/font_size = 8
+LineEdit/fonts/font = ExtResource("1_1018i")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_l0w0m")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_3b3k2")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_m3kpt")

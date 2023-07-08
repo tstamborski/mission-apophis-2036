@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dre0s84cr5m7q"]
+
+[ext_resource type="Script" path="res://scripts/gold_blow.gd" id="1_boyps"]
+[ext_resource type="AudioStream" uid="uid://cdknhup1l0d8b" path="res://assets/asteroid_blow.mp3" id="2_e1h5j"]
+
+[sub_resource type="Gradient" id="Gradient_pnr04"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 0, 1)
+
+[node name="GoldBlow" type="CPUParticles2D"]
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 0.5
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 8.0
+initial_velocity_max = 64.0
+color_ramp = SubResource("Gradient_pnr04")
+script = ExtResource("1_boyps")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_e1h5j")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

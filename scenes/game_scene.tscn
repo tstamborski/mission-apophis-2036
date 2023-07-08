@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://shguxune8dcw"]
+
+[ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_03kgy"]
+[ext_resource type="PackedScene" uid="uid://dd6fkt8v4k6ae" path="res://scenes/background.tscn" id="1_k1tgf"]
+[ext_resource type="PackedScene" uid="uid://bovdich5vijrj" path="res://scenes/hud.tscn" id="4_4x6wk"]
+[ext_resource type="AudioStream" uid="uid://c3yxqxserfoey" path="res://assets/asteroids_switch.mp3" id="5_4l2ix"]
+[ext_resource type="PackedScene" uid="uid://ba3o7qneitojv" path="res://scenes/pause_menu.tscn" id="5_hmg2r"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_03kgy")
+
+[node name="Background" parent="." instance=ExtResource("1_k1tgf")]
+
+[node name="HUD" parent="." instance=ExtResource("4_4x6wk")]
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("5_hmg2r")]
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 96.0
+offset_bottom = 40.0
+
+[node name="SwitchStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_4l2ix")
+
+[connection signal="hidden" from="PauseLayer/PauseMenu" to="." method="unpause"]

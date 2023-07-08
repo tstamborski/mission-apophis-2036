@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctlm3tgm0xx1i"]
+
+[ext_resource type="Script" path="res://scripts/hiscore_data.gd" id="1_s2cf8"]
+
+[node name="HiscoreData" type="Node"]
+script = ExtResource("1_s2cf8")

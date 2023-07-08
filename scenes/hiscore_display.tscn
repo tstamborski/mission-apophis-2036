@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dynxkxj4olbyq"]
+
+[ext_resource type="Script" path="res://scripts/hiscore_display.gd" id="1_xrh3e"]
+
+[node name="HiscoreDisplay" type="VBoxContainer"]
+offset_right = 304.0
+offset_bottom = 128.0
+script = ExtResource("1_xrh3e")

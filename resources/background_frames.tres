@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b3nf5owa4ivjq"]
+
+[ext_resource type="Texture2D" uid="uid://88ajve3t5d50" path="res://assets/cosmosbg320x200.png" id="1_lm8nb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg1fu"]
+atlas = ExtResource("1_lm8nb")
+region = Rect2(0, 0, 320, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uggqv"]
+atlas = ExtResource("1_lm8nb")
+region = Rect2(320, 0, 320, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwanc"]
+atlas = ExtResource("1_lm8nb")
+region = Rect2(640, 0, 320, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lck66"]
+atlas = ExtResource("1_lm8nb")
+region = Rect2(960, 0, 320, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j3w0"]
+atlas = ExtResource("1_lm8nb")
+region = Rect2(1280, 0, 320, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg1fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uggqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwanc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lck66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j3w0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]

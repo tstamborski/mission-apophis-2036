@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hea3x52hb5c"]
+
+[ext_resource type="Script" path="res://scripts/hiscore_entry_display.gd" id="1_56fd3"]
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="1_y6p15"]
+
+[node name="HiscoreEntryDisplay" type="HBoxContainer"]
+clip_contents = true
+offset_right = 304.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_56fd3")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player"
+label_settings = ExtResource("1_y6p15")
+clip_text = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0000000
+"
+label_settings = ExtResource("1_y6p15")
+horizontal_alignment = 2
+clip_text = true
+
+[node name="DifficultyLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EASY"
+label_settings = ExtResource("1_y6p15")
+horizontal_alignment = 2
+clip_text = true

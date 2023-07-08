@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://clj6qdw2gwnip"]
+
+[ext_resource type="Script" path="res://scripts/gold_asteroid_12.gd" id="1_ky8s0"]
+[ext_resource type="Texture2D" uid="uid://wwf87rpo8a7g" path="res://assets/goldrock12.png" id="2_4l2mq"]
+[ext_resource type="PackedScene" uid="uid://dre0s84cr5m7q" path="res://scenes/gold_blow.tscn" id="2_uv3xe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qtgu"]
+radius = 7.0
+
+[node name="GoldAsteroid12" type="CharacterBody2D" groups=["Asteroid", "MediumAsteroid"]]
+collision_mask = 11
+script = ExtResource("1_ky8s0")
+points = 200
+blow_scene = ExtResource("2_uv3xe")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4l2mq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0qtgu")

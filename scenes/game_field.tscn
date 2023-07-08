@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd5ljekl4p46a"]
+
+[ext_resource type="PackedScene" uid="uid://c2j0kubthmvp7" path="res://scenes/player_shuttle.tscn" id="2_su8kx"]
+[ext_resource type="PackedScene" uid="uid://bwrddlt0v7n0i" path="res://scenes/asteroid_16.tscn" id="4_fgot0"]
+
+[node name="GameField" type="Node2D" groups=["GameField"]]
+
+[node name="PlayerShuttle" parent="." instance=ExtResource("2_su8kx")]
+position = Vector2(160, 89)
+
+[node name="Asteroid16" parent="." instance=ExtResource("4_fgot0")]
+position = Vector2(48, 40)
+
+[node name="Asteroid17" parent="." instance=ExtResource("4_fgot0")]
+position = Vector2(160, 176)
+
+[node name="Asteroid18" parent="." instance=ExtResource("4_fgot0")]
+position = Vector2(272, 40)

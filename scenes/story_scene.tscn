@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqrjr0ggt3eb0"]
+
+[ext_resource type="Script" path="res://scripts/story_scene.gd" id="1_yogpw"]
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="2_e5r2w"]
+
+[node name="StoryScene" type="Node2D"]
+script = ExtResource("1_yogpw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 176.0
+text = "There is a year 2036. The dangerous asteroid \"Apophis\" is flying directly into collision with Earth.
+
+National Space Agency was send you with a mission of our last chance. The mission to rescue the world from the apocalypse!
+
+You must destroy the asteroid and their leavings. The future of a whole planet is in your hands now..."
+label_settings = ExtResource("2_e5r2w")
+autowrap_mode = 2
+clip_text = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="proceed"]

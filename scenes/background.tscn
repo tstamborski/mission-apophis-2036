@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd6fkt8v4k6ae"]
+
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_tokry"]
+[ext_resource type="SpriteFrames" uid="uid://b3nf5owa4ivjq" path="res://resources/background_frames.tres" id="1_ylnw6"]
+
+[node name="Background" type="ParallaxBackground"]
+process_mode = 3
+script = ExtResource("1_tokry")
+scroll_velocity = Vector2(16, 8)
+
+[node name="Layer0" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(320, 200)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Layer0"]
+sprite_frames = ExtResource("1_ylnw6")
+centered = false

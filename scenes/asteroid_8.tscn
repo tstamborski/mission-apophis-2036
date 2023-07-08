@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://6icga8tbepbx"]
+
+[ext_resource type="Script" path="res://scripts/asteroid_8.gd" id="1_8l8sn"]
+[ext_resource type="Texture2D" uid="uid://drr4h0mcoleqc" path="res://assets/rock8.png" id="1_jxl2y"]
+[ext_resource type="PackedScene" path="res://scenes/blow.tscn" id="2_apsyq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6xxi"]
+radius = 5.09902
+
+[node name="Asteroid8" type="CharacterBody2D" groups=["Asteroid", "SmallAsteroid"]]
+collision_mask = 11
+script = ExtResource("1_8l8sn")
+points = 20
+blow_scene = ExtResource("2_apsyq")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jxl2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f6xxi")

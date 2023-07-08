@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://bovdich5vijrj"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_j5dx3"]
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="1_qkmjn"]
+[ext_resource type="SpriteFrames" uid="uid://capoohc5e55vi" path="res://resources/lives_sprite_frames.tres" id="3_1lifj"]
+[ext_resource type="SpriteFrames" uid="uid://cyrklgnuxf14u" path="res://resources/bronze_medal.tres" id="4_y8upy"]
+[ext_resource type="SpriteFrames" uid="uid://hyp84pr0wyd5" path="res://resources/silver_medal.tres" id="5_mef7v"]
+[ext_resource type="SpriteFrames" uid="uid://jsg6f1ynavyr" path="res://resources/gold_medal.tres" id="6_ljeeb"]
+
+[sub_resource type="Animation" id="Animation_7huuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MessageContainer/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mvkrj"]
+resource_name = "message_blink"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MessageContainer/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kn4kw"]
+_data = {
+"RESET": SubResource("Animation_7huuu"),
+"message_blink": SubResource("Animation_mvkrj")
+}
+
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+layer = 100
+script = ExtResource("1_j5dx3")
+
+[node name="ScoreContainer" type="MarginContainer" parent="."]
+offset_right = 56.0
+offset_bottom = 16.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="ScoreContainer"]
+layout_mode = 2
+label_settings = ExtResource("1_qkmjn")
+clip_text = true
+
+[node name="LivesContainer" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Sprite0" type="AnimatedSprite2D" parent="LivesContainer"]
+position = Vector2(76, 4)
+sprite_frames = ExtResource("3_1lifj")
+animation = &"blinking"
+
+[node name="Sprite1" type="AnimatedSprite2D" parent="LivesContainer"]
+position = Vector2(68, 4)
+sprite_frames = ExtResource("3_1lifj")
+animation = &"blinking"
+
+[node name="Sprite2" type="AnimatedSprite2D" parent="LivesContainer"]
+position = Vector2(60, 4)
+sprite_frames = ExtResource("3_1lifj")
+animation = &"blinking"
+
+[node name="Sprite3" type="AnimatedSprite2D" parent="LivesContainer"]
+position = Vector2(52, 4)
+sprite_frames = ExtResource("3_1lifj")
+animation = &"blinking"
+
+[node name="Sprite4" type="AnimatedSprite2D" parent="LivesContainer"]
+position = Vector2(44, 4)
+sprite_frames = ExtResource("3_1lifj")
+animation = &"blinking"
+
+[node name="MessageContainer" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 192.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MessageContainer"]
+layout_mode = 2
+label_settings = ExtResource("1_qkmjn")
+vertical_alignment = 2
+clip_text = true
+
+[node name="MedalContainer" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 8.0
+grow_horizontal = 0
+
+[node name="Medal0" type="AnimatedSprite2D" parent="MedalContainer"]
+position = Vector2(36, 4)
+sprite_frames = ExtResource("4_y8upy")
+
+[node name="Medal1" type="AnimatedSprite2D" parent="MedalContainer"]
+position = Vector2(28, 4)
+sprite_frames = ExtResource("5_mef7v")
+
+[node name="Medal2" type="AnimatedSprite2D" parent="MedalContainer"]
+position = Vector2(20, 4)
+sprite_frames = ExtResource("6_ljeeb")
+
+[node name="Medal3" type="AnimatedSprite2D" parent="MedalContainer"]
+position = Vector2(12, 4)
+sprite_frames = ExtResource("6_ljeeb")
+
+[node name="Medal4" type="AnimatedSprite2D" parent="MedalContainer"]
+position = Vector2(4, 4)
+sprite_frames = ExtResource("6_ljeeb")
+
+[node name="LivesTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kn4kw")
+}

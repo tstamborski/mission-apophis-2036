@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://4t2f4kg0r2h7"]
+
+[ext_resource type="SpriteFrames" uid="uid://jsg6f1ynavyr" path="res://resources/gold_medal.tres" id="1_1oyg7"]
+[ext_resource type="Script" path="res://scripts/medal_display.gd" id="1_m0xmv"]
+[ext_resource type="SpriteFrames" uid="uid://hyp84pr0wyd5" path="res://resources/silver_medal.tres" id="2_qnkro"]
+[ext_resource type="SpriteFrames" uid="uid://cyrklgnuxf14u" path="res://resources/bronze_medal.tres" id="3_tmvnl"]
+[ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="4_e0rrr"]
+
+[node name="MedalDisplay" type="Node2D"]
+script = ExtResource("1_m0xmv")
+
+[node name="GoldAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = ExtResource("1_1oyg7")
+
+[node name="SilverAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 8)
+sprite_frames = ExtResource("2_qnkro")
+
+[node name="BronzeAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 8)
+sprite_frames = ExtResource("3_tmvnl")
+
+[node name="GoldLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "x0"
+label_settings = ExtResource("4_e0rrr")
+clip_text = true
+
+[node name="SilverLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "x0"
+label_settings = ExtResource("4_e0rrr")
+clip_text = true
+
+[node name="BronzeLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = 4.0
+offset_right = 136.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "x0"
+label_settings = ExtResource("4_e0rrr")
+clip_text = true

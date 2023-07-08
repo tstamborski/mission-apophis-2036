@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2j0kubthmvp7"]
+
+[ext_resource type="SpriteFrames" uid="uid://cct5sj8fdykjx" path="res://resources/shuttle.tres" id="1_d6fsa"]
+[ext_resource type="Script" path="res://scripts/player_shuttle.gd" id="1_robyn"]
+[ext_resource type="AudioStream" uid="uid://d6jbwuskmk7d" path="res://assets/asteroids_shot.mp3" id="2_suhjg"]
+[ext_resource type="Gradient" uid="uid://x3ffbnjtbxvn" path="res://resources/engine_gradient.tres" id="4_05f1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6hpl"]
+size = Vector2(14, 14)
+
+[node name="PlayerShuttle" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 8
+script = ExtResource("1_robyn")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_d6fsa")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l6hpl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_suhjg")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2DLeft" type="CPUParticles2D" parent="."]
+position = Vector2(-7, 8)
+emitting = false
+amount = 5
+lifetime = 0.25
+direction = Vector2(0, 1)
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+color_ramp = ExtResource("4_05f1l")
+
+[node name="CPUParticles2DRight" type="CPUParticles2D" parent="."]
+position = Vector2(7, 8)
+emitting = false
+amount = 5
+lifetime = 0.25
+direction = Vector2(0, 1)
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+color_ramp = ExtResource("4_05f1l")

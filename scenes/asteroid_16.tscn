@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwrddlt0v7n0i"]
+
+[ext_resource type="Texture2D" uid="uid://duykun6j5p8wi" path="res://assets/rock16.png" id="1_7l2os"]
+[ext_resource type="Script" path="res://scripts/asteroid_16.gd" id="1_dv14j"]
+[ext_resource type="PackedScene" path="res://scenes/blow.tscn" id="2_ut55r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cuuyx"]
+
+[node name="Asteroid16" type="CharacterBody2D" groups=["Asteroid", "BigAsteroid"]]
+collision_mask = 11
+script = ExtResource("1_dv14j")
+blow_scene = ExtResource("2_ut55r")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7l2os")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cuuyx")
+metadata/_edit_group_ = true

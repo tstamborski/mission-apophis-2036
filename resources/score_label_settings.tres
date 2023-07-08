@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b04em3puvb6qi"]
+
+[ext_resource type="FontFile" uid="uid://m8snhb6n6hr5" path="res://assets/font.png" id="1_dwjjh"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_dwjjh")
+font_size = 8
+font_color = Color(0, 1, 0, 1)
+shadow_size = 0
