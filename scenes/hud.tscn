@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bovdich5vijrj"]
+[gd_scene load_steps=11 format=3 uid="uid://bovdich5vijrj"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_j5dx3"]
 [ext_resource type="LabelSettings" uid="uid://b04em3puvb6qi" path="res://resources/score_label_settings.tres" id="1_qkmjn"]
+[ext_resource type="Theme" uid="uid://buw6s5m0h5joo" path="res://resources/green_theme.tres" id="2_p4iv4"]
 [ext_resource type="SpriteFrames" uid="uid://capoohc5e55vi" path="res://resources/lives_sprite_frames.tres" id="3_1lifj"]
 [ext_resource type="SpriteFrames" uid="uid://cyrklgnuxf14u" path="res://resources/bronze_medal.tres" id="4_y8upy"]
 [ext_resource type="SpriteFrames" uid="uid://hyp84pr0wyd5" path="res://resources/silver_medal.tres" id="5_mef7v"]
@@ -49,9 +50,10 @@ _data = {
 layer = 100
 script = ExtResource("1_j5dx3")
 
-[node name="ScoreContainer" type="MarginContainer" parent="."]
-offset_right = 56.0
-offset_bottom = 16.0
+[node name="ScoreContainer" type="PanelContainer" parent="."]
+offset_right = 64.0
+offset_bottom = 8.0
+theme = ExtResource("2_p4iv4")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="ScoreContainer"]
@@ -59,7 +61,7 @@ layout_mode = 2
 label_settings = ExtResource("1_qkmjn")
 clip_text = true
 
-[node name="LivesContainer" type="MarginContainer" parent="."]
+[node name="LivesContainer" type="PanelContainer" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -69,6 +71,7 @@ offset_left = -80.0
 offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("2_p4iv4")
 
 [node name="Sprite0" type="AnimatedSprite2D" parent="LivesContainer"]
 position = Vector2(76, 4)
@@ -95,13 +98,14 @@ position = Vector2(44, 4)
 sprite_frames = ExtResource("3_1lifj")
 animation = &"blinking"
 
-[node name="MessageContainer" type="MarginContainer" parent="."]
+[node name="MessageContainer" type="PanelContainer" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -16.0
+offset_top = -8.0
 offset_right = 192.0
 grow_vertical = 0
+theme = ExtResource("2_p4iv4")
 
 [node name="Label" type="Label" parent="MessageContainer"]
 layout_mode = 2
@@ -109,13 +113,14 @@ label_settings = ExtResource("1_qkmjn")
 vertical_alignment = 2
 clip_text = true
 
-[node name="MedalContainer" type="MarginContainer" parent="."]
+[node name="MedalContainer" type="PanelContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 8.0
 grow_horizontal = 0
+theme = ExtResource("2_p4iv4")
 
 [node name="Medal0" type="AnimatedSprite2D" parent="MedalContainer"]
 position = Vector2(36, 4)

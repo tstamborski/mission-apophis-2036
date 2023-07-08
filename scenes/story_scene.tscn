@@ -13,9 +13,9 @@ offset_right = 288.0
 offset_bottom = 176.0
 text = "There is a year 2036. The dangerous asteroid \"Apophis\" is flying directly into collision with Earth.
 
-National Space Agency was send you with a mission of our last chance. The mission to rescue the world from the apocalypse!
+National Space Agency was send you with a mission of our last chance. With a mission to rescue the world from the apocalypse!
 
-You must destroy the asteroid and their leavings. The future of a whole planet is in your hands now..."
+You have to destroy the asteroid and its leavings. The future of a whole planet is in your hands now..."
 label_settings = ExtResource("2_e5r2w")
 autowrap_mode = 2
 clip_text = true

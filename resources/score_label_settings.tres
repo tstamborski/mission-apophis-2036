@@ -6,5 +6,5 @@
 line_spacing = 0.0
 font = ExtResource("1_dwjjh")
 font_size = 8
-font_color = Color(0, 1, 0, 1)
+font_color = Color(0.286275, 0.666667, 0.0627451, 1)
 shadow_size = 0

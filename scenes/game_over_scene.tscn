@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddrmwl5rb7mjo"]
+[gd_scene load_steps=5 format=3 uid="uid://ddrmwl5rb7mjo"]
 
 [ext_resource type="LabelSettings" uid="uid://dar3540jegwdv" path="res://resources/gameover_label_settings.tres" id="1_1muh6"]
 [ext_resource type="Script" path="res://scripts/game_over_scene.gd" id="1_bt1wb"]
+[ext_resource type="Theme" uid="uid://buw6s5m0h5joo" path="res://resources/green_theme.tres" id="2_3y08g"]
 [ext_resource type="AudioStream" uid="uid://uydewhyxxx4v" path="res://assets/asteroid-gameover.mp3" id="3_kabbv"]
 
 [node name="GameOverScene" type="Node2D"]
 script = ExtResource("1_bt1wb")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="PanelContainer" parent="."]
 offset_right = 320.0
 offset_bottom = 200.0
+theme = ExtResource("2_3y08g")
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
