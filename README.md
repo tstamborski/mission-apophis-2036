@@ -3,8 +3,8 @@ A not-trivial clone of asteroids game made in Godot. 🕹️
 
 ## Overview
 My first and succesful project in Godot. Funny clone of a classic asteroids game with a
-somewhat interesting storyline. More detailed description and downloads will be avaible
-soon on itch.io.
+somewhat interesting storyline. More detailed description and **downloads** are avaible on
+[**itch.io**](https://tstamborski.itch.io/mission-apophis-2036).
 
 ## Screenshots
 ![](screenshot01.png)
